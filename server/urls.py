@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from saved_forms.views import handle_form_submition_view
+from formHandler.views import handle_form_submition_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),

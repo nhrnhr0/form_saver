@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SavedformsConfig(AppConfig):
+class FormhandlerConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'saved_forms'
+    name = 'formHandler'

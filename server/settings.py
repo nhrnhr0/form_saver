@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     
     
+    #dev:
+    'livereload',
+    
+    
     # own:
-    'saved_forms',
+    'formHandler',
 ]
 SITE_ID=1
 
