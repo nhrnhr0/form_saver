@@ -21,11 +21,8 @@ def handle_form_submition_view(request, uid):
         
         newSubmit = SubmitModel.objects.create(parentForm=form, data=data)
         url = request.build_absolute_uri()
-        print(request.META['HTTP_REFERER'], newSubmit)
-        if (is_absolute(form.successRedirect)):
-            url = form.successRedirect
-        else:
-            url = request.META['HTTP_REFERER'] + form.successRedirect
+        print(request.META.get('HTTP_REFERER'), newSubmit)
+        url = form.successRedirect
         
 
 
