@@ -4,3 +4,5 @@ env
 *.pyc
 *.log
 static/**
+
+secrects.py
