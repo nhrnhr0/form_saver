@@ -26,7 +26,7 @@ def handle_form_submition_view(request, uid):
         
 
 
-        messageBody += 'date:\t' + str(newSubmit.date)
+        messageBody += 'תאריך:\t' + str(newSubmit.date)
         n = SendEmailThread( title='הגשת טופס: ' + form.title,
                              messageBody=messageBody,
                              from_email='bot@ms-global.co.il',
