@@ -15,11 +15,11 @@ def handle_form_submition_view(request, uid):
             return JsonResponse({'status':'error', 'code': 'requested form not found'})
         data = {}
         messageBody = ''
-        htmlMessage = ''
+        htmlMessage = '<table>'
         for key, value in request.POST.items():
             data[key]=value
             messageBody += key + ':\t' + value + '\n'
-            htmlMessage += '<div>' + key + ':\t' + value + '</div></br>';
+            htmlMessage += '<tr><td>' + key + '</td><td>' + value + '</td></tr>';
         
         newSubmit = SubmitModel.objects.create(parentForm=form, data=data)
         url = request.build_absolute_uri()
@@ -28,9 +28,10 @@ def handle_form_submition_view(request, uid):
         
         dateStr = str(newSubmit.date.strftime("%Y-%m-%d %H:%M:%S"))
         messageBody += 'תאריך:\t' + dateStr;
-        htmlMessage += '<div> תאריך:\t' + dateStr +  "</div></br>";
-        htmlMessage += '<div>' + 'ליד חדש נכנס לאתר, צור קשר במהרה!' +  "</div></br>";
-        htmlMessage += '<a href="https://ms-global.co.il"><img src="https://lead.ms-global.co.il/logo_ms.png" style="height: 50px;" /> </a>';
+        htmlMessage += '<tr><td> תאריך' + '</td><td>' + dateStr +  "</td></tr>";
+        htmlMessage += '<tr><td colspan="2">' + 'ליד חדש נכנס לאתר, צור קשר במהרה!' +  "</td></tr>";
+        htmlMessage += '<tr><td colspan"2"> <a href="https://ms-global.co.il"><img src="https://lead.ms-global.co.il/logo_ms.png" style="height: 50px;" /> </a></td></tr>';
+        
         n = SendEmailThread( title='הגשת טופס: ' + form.title + ' - ' + dateStr,
                              messageBody=messageBody,
                              htmlMessage=htmlMessage,
