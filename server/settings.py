@@ -144,6 +144,8 @@ MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media_root/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # email settings:
 EMAIL_USE_TLS = True
