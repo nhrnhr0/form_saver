@@ -29,6 +29,7 @@ def handle_form_submition_view(request, uid):
         dateStr = str(newSubmit.date.strftime("%Y-%m-%d %H:%M:%S"))
         messageBody += 'תאריך:\t' + dateStr;
         htmlMessage += '<div> תאריך:\t' + dateStr +  "</div></br>";
+        htmlMessage += '<div>' + 'ליד חדש נכנס לאתר, צור קשר במהרה!' +  "</div></br>";
         htmlMessage += '<a href="https://ms-global.co.il"><img src="https://lead.ms-global.co.il/logo_ms.png" style="height: 50px;" /> </a>';
         n = SendEmailThread( title='הגשת טופס: ' + form.title + ' - ' + dateStr,
                              messageBody=messageBody,
