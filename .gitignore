@@ -3,6 +3,7 @@ db.sqlite3
 env
 *.pyc
 *.log
+*.save
 static/**
 
 secrects.py
