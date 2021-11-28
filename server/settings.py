@@ -145,7 +145,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # email settings:
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_HOST = secrects.EMAIL_HOST
 EMAIL_PORT = 587
 EMAIL_HOST_USER = secrects.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = secrects.EMAIL_HOST_PASSWORD

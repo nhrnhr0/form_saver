@@ -76,14 +76,14 @@ def handle_form_submition_view(request, uid):
         [messageBody,htmlMessage]  = generate_email_body(data, dateStr)
         
         # send the email to all the list in a new thread
-        '''
+        
         n = SendEmailThread( title='הגשת טופס: ' + form.title + ' - ' + dateStr,
                              messageBody=messageBody,
                              htmlMessage=htmlMessage,
-                             from_email='no-reply@ms-global.co.il',
+                             from_email='Main@ms-global.co.il',
                              to=emails)
         n.start()
-        '''
+        
         
         
         # get all the chat ids from the form
